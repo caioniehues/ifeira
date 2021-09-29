@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="7b859740-989f-4e59-ad7e-7965463cebfe" name="ifeira" url="jdbc:postgresql://localhost/testebanco" driverClass="org.postgresql.Driver" />
+    </data-sources>
     <data-source-infos>
       <data-source-info id="" persistence-unit-name="Default" />
     </data-source-infos>
