@@ -15,7 +15,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ID_USUARIO")
     @SequenceGenerator(name = "ID_USUARIO", sequenceName = "ID_USUARIO", allocationSize = 1)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "ativo", nullable = false, unique = true)
@@ -43,12 +43,19 @@ public class Usuario {
     @Column(name = "tipo_de_usuario", nullable = false, unique = true)
     private TipoDeUsuario tipoDeUsuario;
 
-
-
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    /*@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Pedido> pedidos;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Endereco> enderecoes;
+    private List<Endereco> enderecoes;*/
 
+    public Usuario(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+        this.ativo = true;
+        this.tipoDeUsuario = TipoDeUsuario.CLIENTE;
+    }
+
+    public Usuario() {
+    }
 }
